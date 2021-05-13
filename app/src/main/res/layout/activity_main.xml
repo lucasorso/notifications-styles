@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioChannel1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Channel 1" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioChannel2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Channel 2" />
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notification Title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Title Of Notification" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notification Message">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Message Of Notification" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notification ID">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextNotifcationID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:inputType="numberDecimal"
+                android:text="1234" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSendSimpleNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Send Simple Notification"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSendActionNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Send Action Notification"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSendBigTextWithImageNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Send Big Text Notification"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSendInboxNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Send Inbox Text Notification"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSendBigPictureNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Send BigPicture Notification"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSendMediaNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Send Media Notification"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSendMessageNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Send Messaging Notification"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonFakeDownloadNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Fake download Notification"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</ScrollView>
