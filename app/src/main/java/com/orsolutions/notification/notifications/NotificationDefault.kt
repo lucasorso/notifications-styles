@@ -8,6 +8,7 @@ import com.orsolutions.notification.MainActivity
 import com.orsolutions.notification.NotificationApplication
 import com.orsolutions.notification.R
 import com.orsolutions.notification.extensions.notificationManager
+import kotlin.random.Random
 
 abstract class NotificationDefault(private val context: Context) {
 
@@ -18,7 +19,9 @@ abstract class NotificationDefault(private val context: Context) {
         get() = PendingIntent.getActivity(context, 0, activityIntent, 0)
 
     protected open val notificationId: Int
-        get() = CURRENT_NOTIFICATION_ID
+        get() {
+            return if (RANDOM_ID) Random.nextInt() else CURRENT_NOTIFICATION_ID
+        }
 
     abstract fun build(title: String, message: String): Notification
 
@@ -31,6 +34,7 @@ abstract class NotificationDefault(private val context: Context) {
      */
     companion object {
         var CURRENT_NOTIFICATION_ID: Int = 1234
+        var RANDOM_ID: Boolean = false
         var CURRENT_CHANNEL_ID: String = NotificationApplication.CHANNEL_1_ID
         var CURRENT_ICON: Int = R.drawable.ic_looks_one
     }

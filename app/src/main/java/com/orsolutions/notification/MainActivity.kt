@@ -59,18 +59,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             NotificationDefault.CURRENT_ICON = icon
         }
 
-        editTextNotifcationID.doOnTextChanged { text, _, _, _ ->
-            if (editTextNotifcationID.hasFocus()) {
+        editTextNotificationID.doOnTextChanged { text, _, _, _ ->
+            if (editTextNotificationID.hasFocus()) {
                 text?.let {
                     if (it.isNotEmpty()) {
                         NotificationDefault.CURRENT_NOTIFICATION_ID = it.toString().toInt()
                     } else {
-                        editTextNotifcationID.clearFocus()
-                        editTextNotifcationID.setText("1")
-                        editTextNotifcationID.requestFocus()
+                        editTextNotificationID.clearFocus()
+                        editTextNotificationID.setText("1")
+                        editTextNotificationID.requestFocus()
                     }
                 }
             }
+        }
+
+        checkboxRandomNotificationID.setOnCheckedChangeListener { _, isChecked ->
+            editTextNotificationID.isEnabled = !isChecked
+            NotificationDefault.RANDOM_ID = isChecked
         }
 
         buttonSendSimpleNotification.setOnClickListener(this)
@@ -81,6 +86,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonSendMediaNotification.setOnClickListener(this)
         buttonSendMessageNotification.setOnClickListener(this)
         buttonFakeDownloadNotification.setOnClickListener(this)
+
+        crashButton.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
+        }
     }
 
     override fun onClick(v: View) {

@@ -4,6 +4,9 @@ import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
+import com.google.firebase.ktx.Firebase
 import com.orsolutions.notification.di.ApplicationComponent
 import com.orsolutions.notification.extensions.notificationManager
 
@@ -15,6 +18,25 @@ class NotificationApplication : Application() {
         super.onCreate()
         ApplicationComponent.create(this)
         createNotificationChannels()
+
+        Firebase.analytics.setUserId("Orso")
+
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
+
+//         Set a key to a string.
+        FirebaseCrashlytics.getInstance().setCustomKey("str_key", "hello")
+//         Set a key to a boolean.
+        FirebaseCrashlytics.getInstance().setCustomKey("bool_key", true)
+//         Set a key to an int.
+        FirebaseCrashlytics.getInstance().setCustomKey("int_key", 1)
+//         Set a key to a long.
+        FirebaseCrashlytics.getInstance().setCustomKey("int_key", 1L)
+//         Set a key to a float.
+        FirebaseCrashlytics.getInstance().setCustomKey("float_key", 1.0f)
+//         Set a key to a double.
+        FirebaseCrashlytics.getInstance().setCustomKey("double_key", 1.0)
+
+        FirebaseCrashlytics.getInstance().setUserId("Orso")
     }
 
     private fun createNotificationChannels() {
